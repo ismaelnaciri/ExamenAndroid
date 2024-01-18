@@ -43,15 +43,24 @@ class AlumnsFragment : Fragment() {
         viewModel.alumns.observe(viewLifecycleOwner) { alumnsList ->
             alumnAdapter.dataset = alumnsList
             alumnRecyclerView.adapter = alumnAdapter
+        }
 
-            val switch = binding.failedSwitch
+        binding.failedSwitch.setOnClickListener {
+            val checked = binding.failedSwitch.isChecked
 
-            switch.setOnClickListener {
-                if (switch.isChecked) {
-                    viewModel.getAlumnsAprovats(requireContext())
+            if (checked) {
+                Toast.makeText(requireContext(), "Checked? " + checked, Toast.LENGTH_LONG).show()
+                viewModel.getAlumnsAprovats(requireContext())
+                viewModel.alumns.observe(viewLifecycleOwner) { alumnsList ->
+                    alumnAdapter.dataset = alumnsList
                     alumnRecyclerView.adapter = alumnAdapter
-                } else {
-                    viewModel.getFailedAlumns(requireContext())
+                }
+
+            } else {
+                Toast.makeText(requireContext(), "TRY |  " + checked, Toast.LENGTH_LONG).show()
+                viewModel.getFailedAlumns(requireContext())
+                viewModel.alumns.observe(viewLifecycleOwner) { alumnsList ->
+                    alumnAdapter.dataset = alumnsList
                     alumnRecyclerView.adapter = alumnAdapter
                 }
             }
