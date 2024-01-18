@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/navigation">
-
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/insertFragment">
+    <fragment
+        android:id="@+id/insertFragment"
+        android:name="cat.insvidreres.inf.examenandroid.ui.InsertFragment"
+        android:label="InsertFragment"
+        tools:layout="@layout/fragment_insert">
+    </fragment>
+    <fragment
+        android:id="@+id/alumnsFragment"
+        android:name="cat.insvidreres.inf.examenandroid.ui.AlumnsFragment"
+        android:label="AlumnsFragment"
+        tools:layout="@layout/fragment_alumns"
+        />
 </navigation>
