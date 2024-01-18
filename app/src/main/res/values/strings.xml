@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ExamenAndroid</string>
+    <string name="alumnes">Alumnes</string>
+    <string name="grup">GRUP</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="aprovat">Aprovat</string>
+    <string name="susp_s">Suspés</string>
+
+    <!--    Spinner Drop-Down list Values-->
+<!--    <string-array name="dropdownValues">-->
+<!--        <item>Aprobats</item>-->
+<!--        <item>Suspesos</item>-->
+<!--    </string-array>-->
+</resources>
