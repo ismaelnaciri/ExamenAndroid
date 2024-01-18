@@ -29,7 +29,7 @@ class Repository {
         fun getAllAlumns(context: Context): LiveData<List<Alumn>>? {
             alumnDatabase = initializeDB(context)
 
-            alumns = alumnDatabase!!.alumnDAO().getAlumnsAprovats()
+            alumns = alumnDatabase!!.alumnDAO().initialAlumnsQuery()
             return alumns
         }
 

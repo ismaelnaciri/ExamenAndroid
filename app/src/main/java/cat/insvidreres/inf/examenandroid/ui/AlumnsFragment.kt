@@ -44,14 +44,19 @@ class AlumnsFragment : Fragment() {
             alumnAdapter.dataset = alumnsList
             alumnRecyclerView.adapter = alumnAdapter
 
-            binding.failedSwitch.setOnClickListener {
-                if (binding.failedSwitch.isChecked) {
+            val switch = binding.failedSwitch
+
+            switch.setOnClickListener {
+                if (switch.isChecked) {
                     viewModel.getAlumnsAprovats(requireContext())
+                    alumnRecyclerView.adapter = alumnAdapter
                 } else {
                     viewModel.getFailedAlumns(requireContext())
+                    alumnRecyclerView.adapter = alumnAdapter
                 }
             }
         }
+
         return binding.root
     }
 }
